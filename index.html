@@ -49,7 +49,7 @@ body {
     right: 15px;
     display: flex;
     align-items: center;
-    gap: 15px; /* تخفيض المسافة بين الصورة والنص */
+    gap: 15px;
     background: rgba(255, 255, 255, 0.85);
     padding: 10px 15px;
     border-radius: 10px;
@@ -102,19 +102,19 @@ body {
 
 .info-bar {
     display: flex;
-    justify-content: space-between; /* توزيع متساوي للعناصر */
+    justify-content: space-between; /* توزيع متساوي */
     background-color: #fafafa;
-    padding: 12px 10px; /* تقليل الحشو لزيادة الانضباط */
+    padding: 12px 20px; /* padding محسوب */
     border-top: 1px solid #ddd;
     font-size: 14px;
-    flex-wrap: wrap;
-    gap: 5px; /* مسافة عقلانية بين العناصر */
+    flex-wrap: nowrap; /* لا تسمح بالانتقال لسطر آخر */
 }
 
 .info-item {
     display: flex;
     align-items: center;
-    gap: 6px; /* مسافة أصغر بين الأيقونة والنص */
+    gap: 6px;
+    flex: 1; /* كل عنصر يأخذ مساحة متساوية */
 }
 
 .info-item i {
