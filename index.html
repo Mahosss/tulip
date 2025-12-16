@@ -9,13 +9,12 @@
 <style>
 body {
     margin: 0;
-    padding: 0;
+    padding: 40px 0; /* مسافة من أعلى وأسفل المتصفح */
     font-family: 'Tajawal', Arial, sans-serif;
     background: linear-gradient(135deg, #00c6ff, #0072ff);
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    align-items: flex-start;
 }
 
 .card {
@@ -27,6 +26,7 @@ body {
     text-align: right;
     direction: rtl;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin: 20px 0; /* مسافة إضافية أعلى وأسفل */
 }
 
 .card:hover {
@@ -148,60 +148,61 @@ body {
     font-size: 15px;
 }
 
-/* زر "اضغط هنا" */
 .action-btn {
-    background-color: #ff8c00;
+    background: linear-gradient(45deg, #ff8c00, #ffcc00);
     color: #fff;
     border: none;
     padding: 10px 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 16px;
-    transition: background 0.3s ease;
+    float: right;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease;
 }
 
 .action-btn:hover {
-    background-color: #ffa733;
+    transform: scale(1.05);
 }
 
-/* زر شفاف للعبارات المتغيرة */
 .typing-btn {
-    background-color: rgba(0, 114, 255, 0.1);
+    background-color: rgba(0, 114, 255, 0.08);
     border: 2px solid #0072ff;
     border-radius: 12px;
-    padding: 8px 12px;
+    padding: 12px;
     font-size: 16px;
     color: #0072ff;
     font-weight: bold;
-    display: inline-block;
-    min-width: 200px;
+    display: block;
+    width: 100%;
+    min-height: 40px;
     text-align: center;
+    margin-bottom: 20px;
 }
 
-/* خط فاصل */
 .divider {
     height: 1px;
     background-color: #ddd;
     margin: 20px 0;
 }
 
-/* زر فيديوهاتي */
 .videos-btn {
-    background-color: #00c6ff;
+    background: linear-gradient(45deg, #ff8c00, #ffcc00);
     color: #fff;
     border: none;
     padding: 10px 20px;
-    border-radius: 10px;
+    border-radius: 12px;
     cursor: pointer;
     font-size: 16px;
+    float: right;
     margin-bottom: 10px;
+    transition: transform 0.3s ease;
 }
 
 .videos-btn:hover {
-    background-color: #0072ff;
+    transform: scale(1.05);
 }
 
-/* معرض الفيديوهات */
 .videos-container {
     display: flex;
     gap: 10px;
@@ -209,20 +210,12 @@ body {
     padding-bottom: 10px;
 }
 
-.video-item {
-    flex: 0 0 30%; /* يظهر 3 فيديوهات فقط */
-    height: 120px;
-    background-color: #eee;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    color: #555;
-    cursor: pointer;
-    min-width: 30%;
+.videos-container iframe {
+    flex: 0 0 auto;
+    width: 120px;
+    height: 180px; /* بالطول مثل حالات واتساب */
+    border-radius: 12px;
 }
-
 .videos-container::-webkit-scrollbar {
     height: 8px;
 }
@@ -249,7 +242,6 @@ body {
         </div>
     </div>
 
-    <!-- شريط المعلومات -->
     <div class="info-bar">
         <div class="info-item">
             <i class="fas fa-smile"></i>
@@ -270,31 +262,26 @@ body {
         </div>
     </div>
 
-    <!-- القسم الجديد تحت الأسئلة -->
     <div class="card-content">
-        <div style="text-align: right; margin-bottom: 15px;">
-            <button class="action-btn">اضغط هنا</button>
-        </div>
+        <button class="action-btn">اضغط هنا</button>
         <div class="typing-btn">
             <span id="typing"></span>
         </div>
 
-        <!-- خط فاصل -->
         <div class="divider"></div>
 
-        <!-- زر فيديوهاتي -->
         <button class="videos-btn">فيديوهاتي</button>
         <div class="videos-container">
-            <div class="video-item">فيديو 1</div>
-            <div class="video-item">فيديو 2</div>
-            <div class="video-item">فيديو 3</div>
-            <div class="video-item">فيديو 4</div>
-            <div class="video-item">فيديو 5</div>
-            <div class="video-item">فيديو 6</div>
-            <div class="video-item">فيديو 7</div>
-            <div class="video-item">فيديو 8</div>
-            <div class="video-item">فيديو 9</div>
-            <div class="video-item">فيديو 10</div>
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/L_jWHffIx5E" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/fJ9rUzIMcZQ" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/tAGnKpE4NCI" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/oHg5SJYRHA0" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/kJQP7kiw5Fk" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/2Vv-BfVoq4g" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/60ItHLz5WEA" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/OPf0YbXqDm0" allowfullscreen></iframe>
         </div>
     </div>
 </div>
