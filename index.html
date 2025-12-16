@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tulip • Minimal</title>
+<title>Tulip Exclusive</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -13,199 +13,237 @@
   box-sizing:border-box;
   margin:0;
   padding:0;
-  font-family:'Cairo', sans-serif;
+  font-family:'Cairo',sans-serif;
 }
 
 body{
-  background:#0b0611;
+  background:linear-gradient(180deg,#0b1020,#020617);
   color:#fff;
-  display:flex;
-  justify-content:center;
-  padding:40px 15px 60px;
+  min-height:100vh;
+  padding:40px 12px;
 }
 
-/* ===== CONTAINER ===== */
-.container{
-  width:100%;
+.card{
   max-width:420px;
+  margin:auto;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(16px);
+  border-radius:28px;
+  padding:30px 22px 40px;
+  box-shadow:0 30px 80px rgba(0,0,0,.7),
+             inset 0 0 0 1px rgba(255,255,255,.08);
 }
 
-/* ===== IMAGE ===== */
-.profile-img{
-  width:100%;
-  height:360px;
-  border-radius:26px;
+/* ===== Header ===== */
+.header{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.avatar{
+  width:130px;
+  height:130px;
+  margin:0 auto 14px;
+  border-radius:50%;
   overflow:hidden;
-  box-shadow:0 20px 60px rgba(0,0,0,.7);
+  border:3px solid #f472b6;
+  box-shadow:0 0 30px rgba(244,114,182,.6);
 }
 
-.profile-img img{
+.avatar img{
   width:100%;
   height:100%;
   object-fit:cover;
 }
 
-/* ===== NAME ===== */
 .name{
-  margin:18px 0 6px;
-  font-size:26px;
+  font-size:24px;
   font-weight:700;
-  background:linear-gradient(90deg,#f9a8d4,#c084fc);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+  margin-bottom:6px;
 }
 
 .bio{
   font-size:14px;
-  color:#fbcfe8;
-  margin-bottom:25px;
-  line-height:1.8;
+  color:#e5e7eb;
+  opacity:.85;
 }
 
-/* ===== INFO ===== */
-.info-card{
-  background:rgba(255,255,255,.05);
-  border-radius:18px;
-  padding:16px 18px;
+/* ===== Timeline ===== */
+.timeline{
+  position:relative;
+  margin:30px 0;
+  padding-right:20px;
+}
+
+.timeline::before{
+  content:"";
+  position:absolute;
+  top:0;
+  right:6px;
+  width:2px;
+  height:100%;
+  background:linear-gradient(to bottom,#f472b6,#818cf8);
+}
+
+.item{
   display:flex;
   align-items:center;
-  gap:14px;
-  margin-bottom:12px;
-  backdrop-filter:blur(10px);
+  gap:12px;
+  margin-bottom:18px;
 }
 
-.info-card i{
-  color:#f472b6;
-  font-size:18px;
-  width:22px;
-  text-align:center;
+.dot{
+  width:14px;
+  height:14px;
+  border-radius:50%;
+  background:#f472b6;
+  box-shadow:0 0 10px rgba(244,114,182,.8);
+  flex-shrink:0;
 }
 
-.info-text span{
+.content{
+  background:rgba(255,255,255,0.05);
+  padding:10px 14px;
+  border-radius:14px;
+  width:100%;
+  font-size:14px;
+}
+
+.label{
+  color:#f9a8d4;
+  font-weight:600;
+}
+
+.value{
   display:block;
-  font-size:13px;
-  color:#fbcfe8;
+  color:#fff;
+  margin-top:2px;
 }
 
-.info-text strong{
-  font-size:15px;
-  font-weight:600;
+.value a{
+  color:#e0e7ff;
+  text-decoration:none;
 }
 
-/* ===== SEPARATOR ===== */
-.separator{
-  height:1px;
-  background:linear-gradient(to right,transparent,#f472b6,transparent);
-  margin:25px 0;
+.value a:hover{
+  text-decoration:underline;
 }
 
-/* ===== VIDEOS ===== */
-.video-title{
-  font-size:15px;
-  font-weight:600;
+/* ===== Videos ===== */
+.section-title{
   text-align:center;
-  margin-bottom:14px;
+  margin:25px 0 10px;
 }
 
-.video-row{
+.section-title span{
+  background:linear-gradient(90deg,#f472b6,#818cf8);
+  padding:6px 18px;
+  border-radius:20px;
+  font-size:14px;
+  font-weight:600;
+}
+
+.videos{
   display:flex;
-  gap:16px;
+  gap:14px;
   overflow-x:auto;
-  padding-bottom:12px;
+  padding:14px 0 10px;
+  -webkit-overflow-scrolling:touch;
 }
 
-.video-row::-webkit-scrollbar{
+.videos::-webkit-scrollbar{
   height:6px;
 }
 
-.video-row::-webkit-scrollbar-thumb{
-  background:linear-gradient(90deg,#f472b6,#c084fc);
+.videos::-webkit-scrollbar-thumb{
+  background:#f472b6;
   border-radius:10px;
 }
 
-.video-card{
-  flex:0 0 75%;
-  height:300px;
-  border-radius:22px;
-  overflow:hidden;
+.video{
+  flex:0 0 70%;
+  max-width:70%;
+  aspect-ratio:9/16;
   background:#000;
-  box-shadow:0 15px 40px rgba(0,0,0,.7);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
 }
 
-.video-card iframe{
+.video iframe{
   width:100%;
   height:100%;
   border:none;
 }
 
-/* ===== DESKTOP ===== */
+/* ===== Desktop tweak ===== */
 @media(min-width:900px){
-  .video-card{
+  .video{
     flex:0 0 32%;
-    height:340px;
+    max-width:32%;
   }
 }
 </style>
 </head>
 <body>
 
-<div class="container">
+<div class="card">
 
-  <div class="profile-img">
-    <img src="https://img.alfrsantv.com/img/f176457294607841.png" alt="Tulip">
-  </div>
-
-  <div class="name">Tulip 🌷</div>
-  <div class="bio">
-    البساطة اختيار…  
-    والهدوء أسلوب حياة
-  </div>
-
-  <div class="info-card">
-    <i class="fa-solid fa-location-dot"></i>
-    <div class="info-text">
-      <span>البلد</span>
-      <strong>مصر</strong>
+  <div class="header">
+    <div class="avatar">
+      <img src="https://img.alfrsantv.com/img/f176457294607841.png" alt="Tulip">
     </div>
+    <div class="name">Tulip 🌸</div>
+    <div class="bio">الهدوء هو فخامتى… والبساطة سر جمالى</div>
   </div>
 
-  <div class="info-card">
-    <i class="fa-solid fa-heart"></i>
-    <div class="info-text">
-      <span>الهواية</span>
-      <strong>القراءة</strong>
+  <div class="timeline">
+
+    <div class="item">
+      <div class="dot"></div>
+      <div class="content">
+        <span class="label">البلد</span>
+        <span class="value">مصر</span>
+      </div>
     </div>
-  </div>
 
-  <div class="info-card">
-    <i class="fa-solid fa-music"></i>
-    <div class="info-text">
-      <span>الموسيقى</span>
-      <strong>رومانسية</strong>
+    <div class="item">
+      <div class="dot"></div>
+      <div class="content">
+        <span class="label">الهواية</span>
+        <span class="value">التصوير</span>
+      </div>
     </div>
-  </div>
 
-  <div class="info-card">
-    <i class="fa-solid fa-comments"></i>
-    <div class="info-text">
-      <span>الشات</span>
-      <strong>
-        <a href="https://xat.com/melodylovers" target="_blank" style="color:#fff;text-decoration:none">
-          شات ميلودى
-        </a>
-      </strong>
+    <div class="item">
+      <div class="dot"></div>
+      <div class="content">
+        <span class="label">الموسيقى</span>
+        <span class="value">هادئة / Lo-Fi</span>
+      </div>
     </div>
+
+    <div class="item">
+      <div class="dot"></div>
+      <div class="content">
+        <span class="label">الشات</span>
+        <span class="value">
+          <a href="https://xat.com/melodylovers" target="_blank">شات ميلودى</a>
+        </span>
+      </div>
+    </div>
+
   </div>
 
-  <div class="separator"></div>
+  <div class="section-title">
+    <span>فيديوهاتى</span>
+  </div>
 
-  <div class="video-title">فيديوهاتى</div>
-
-  <div class="video-row">
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/5AzBdkbI0OY" allowfullscreen></iframe></div>
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/yOVVbM9YtWM" allowfullscreen></iframe></div>
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/nCFkTs8sG-A" allowfullscreen></iframe></div>
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/NxLQK2xLoSs" allowfullscreen></iframe></div>
+  <div class="videos">
+    <div class="video"><iframe src="https://www.youtube.com/embed/5AzBdkbI0OY" allowfullscreen></iframe></div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/yOVVbM9YtWM" allowfullscreen></iframe></div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/nCFkTs8sG-A" allowfullscreen></iframe></div>
+    <div class="video"><iframe src="https://www.youtube.com/embed/NxLQK2xLoSs" allowfullscreen></iframe></div>
   </div>
 
 </div>
