@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tulip • Story</title>
+<title>Tulip • Luxury</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -17,80 +17,86 @@
 }
 
 body{
-  background:#05010a;
+  background:linear-gradient(135deg,#0b0411,#12051a);
   color:#fff;
   overflow-x:hidden;
 }
 
-/* ===== HERO ===== */
-.hero{
+/* ===== LAYOUT ===== */
+.split{
+  display:flex;
+  min-height:100vh;
+  padding:40px 30px;
+  gap:30px;
+}
+
+/* ===== IMAGE SIDE ===== */
+.image-side{
+  flex:1;
+  border-radius:30px;
+  overflow:hidden;
   position:relative;
-  height:70vh;
-  min-height:420px;
+  min-height:500px;
   background:url('https://img.alfrsantv.com/img/f176457294607841.png') center/cover no-repeat;
 }
 
-.hero::after{
+.image-side::after{
   content:"";
   position:absolute;
   inset:0;
   background:linear-gradient(
     to bottom,
-    rgba(5,1,10,.2),
-    rgba(5,1,10,.85)
+    rgba(0,0,0,.1),
+    rgba(0,0,0,.75)
   );
 }
 
-.hero-content{
-  position:absolute;
-  bottom:30px;
-  right:20px;
-  left:20px;
-  z-index:2;
+/* ===== CONTENT SIDE ===== */
+.content-side{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:20px;
 }
 
-.hero h1{
-  font-size:30px;
+.name{
+  font-size:34px;
   font-weight:700;
   background:linear-gradient(90deg,#f9a8d4,#c084fc);
   -webkit-background-clip:text;
   -webkit-text-fill-color:transparent;
 }
 
-.hero p{
-  margin-top:8px;
+.bio{
+  margin:15px 0 30px;
   font-size:15px;
   color:#fbcfe8;
-  line-height:1.7;
+  line-height:1.8;
+  max-width:420px;
 }
 
-/* ===== SECTION ===== */
-.section{
-  padding:25px 18px;
+/* ===== INFO ===== */
+.info{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:16px;
+  max-width:420px;
 }
 
-/* ===== INFO CARDS ===== */
 .info-card{
-  background:rgba(255,255,255,.06);
-  border-radius:20px;
-  padding:16px 18px;
+  background:rgba(255,255,255,.07);
+  padding:16px;
+  border-radius:18px;
   display:flex;
+  gap:12px;
   align-items:center;
-  gap:14px;
-  margin-bottom:12px;
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(10px);
 }
 
 .info-card i{
-  font-size:18px;
   color:#f472b6;
-  width:24px;
-  text-align:center;
-}
-
-.info-text{
-  display:flex;
-  flex-direction:column;
+  font-size:18px;
 }
 
 .info-text span{
@@ -99,140 +105,153 @@ body{
 }
 
 .info-text strong{
+  display:block;
   font-size:15px;
   font-weight:600;
 }
 
-/* ===== TITLE ===== */
-.title{
+/* ===== VIDEOS ===== */
+.videos{
+  margin-top:50px;
+}
+
+.videos-title{
   text-align:center;
-  margin:30px 0 15px;
-  font-size:16px;
+  font-size:17px;
   font-weight:600;
-  color:#fff;
+  margin-bottom:15px;
   position:relative;
 }
 
-.title::after{
+.videos-title::after{
   content:"";
-  display:block;
-  width:60px;
+  width:70px;
   height:2px;
-  margin:10px auto 0;
   background:linear-gradient(90deg,#f472b6,#c084fc);
+  display:block;
+  margin:10px auto 0;
   border-radius:10px;
 }
 
-/* ===== VIDEOS ===== */
-.story-videos{
+.video-row{
   display:flex;
-  gap:14px;
+  gap:18px;
   overflow-x:auto;
-  padding-bottom:15px;
-  -webkit-overflow-scrolling:touch;
+  padding-bottom:20px;
   scroll-behavior:smooth;
 }
 
-.story-videos::-webkit-scrollbar{
-  height:6px;
+.video-row::-webkit-scrollbar{
+  height:7px;
 }
 
-.story-videos::-webkit-scrollbar-thumb{
+.video-row::-webkit-scrollbar-thumb{
   background:linear-gradient(90deg,#f472b6,#c084fc);
   border-radius:10px;
 }
 
-.story-video{
-  flex:0 0 72%;
-  height:320px;
+.video-card{
+  flex:0 0 30%;
+  height:240px;
   border-radius:22px;
   overflow:hidden;
   background:#000;
   box-shadow:0 10px 35px rgba(0,0,0,.7);
 }
 
-.story-video iframe{
+.video-card iframe{
   width:100%;
   height:100%;
   border:none;
 }
 
-/* ===== DESKTOP ===== */
-@media(min-width:900px){
-  .hero{
-    height:80vh;
+/* ===== MOBILE ===== */
+@media(max-width:900px){
+  .split{
+    flex-direction:column;
+    padding:25px 15px;
   }
 
-  .story-video{
-    flex:0 0 32%;
-    height:360px;
+  .image-side{
+    min-height:420px;
+  }
+
+  .info{
+    grid-template-columns:1fr;
+  }
+
+  .video-card{
+    flex:0 0 80%;
   }
 }
 </style>
 </head>
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-content">
-    <h1>Tulip 🌷</h1>
-    <p>
-      هادئة كالموسيقى…  
-      وحاضرة كالعطر
-    </p>
-  </div>
-</div>
+<div class="split">
 
-<!-- INFO -->
-<div class="section">
+  <!-- IMAGE -->
+  <div class="image-side"></div>
 
-  <div class="info-card">
-    <i class="fa-solid fa-location-dot"></i>
-    <div class="info-text">
-      <span>البلد</span>
-      <strong>مصر</strong>
+  <!-- CONTENT -->
+  <div class="content-side">
+    <div class="name">Tulip 🌷</div>
+    <div class="bio">
+      أنثى هادئة الملامح…  
+      تحب التفاصيل الصغيرة  
+      وتؤمن أن الرقي إحساس
     </div>
-  </div>
 
-  <div class="info-card">
-    <i class="fa-solid fa-heart"></i>
-    <div class="info-text">
-      <span>الهواية</span>
-      <strong>القراءة</strong>
-    </div>
-  </div>
+    <div class="info">
+      <div class="info-card">
+        <i class="fa-solid fa-location-dot"></i>
+        <div class="info-text">
+          <span>البلد</span>
+          <strong>مصر</strong>
+        </div>
+      </div>
 
-  <div class="info-card">
-    <i class="fa-solid fa-music"></i>
-    <div class="info-text">
-      <span>الموسيقى</span>
-      <strong>رومانسية</strong>
-    </div>
-  </div>
+      <div class="info-card">
+        <i class="fa-solid fa-heart"></i>
+        <div class="info-text">
+          <span>الهواية</span>
+          <strong>القراءة</strong>
+        </div>
+      </div>
 
-  <div class="info-card">
-    <i class="fa-solid fa-comments"></i>
-    <div class="info-text">
-      <span>الشات</span>
-      <strong>
-        <a href="https://xat.com/melodylovers" target="_blank" style="color:#fff;text-decoration:none">
-          شات ميلودى
-        </a>
-      </strong>
+      <div class="info-card">
+        <i class="fa-solid fa-music"></i>
+        <div class="info-text">
+          <span>الموسيقى</span>
+          <strong>رومانسية</strong>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <i class="fa-solid fa-comments"></i>
+        <div class="info-text">
+          <span>الشات</span>
+          <strong>
+            <a href="https://xat.com/melodylovers" target="_blank" style="color:#fff;text-decoration:none">
+              شات ميلودى
+            </a>
+          </strong>
+        </div>
+      </div>
     </div>
   </div>
 
 </div>
 
 <!-- VIDEOS -->
-<div class="section">
-  <div class="title">فيديوهاتى</div>
+<div class="videos">
+  <div class="videos-title">فيديوهاتى</div>
 
-  <div class="story-videos">
-    <div class="story-video"><iframe src="https://www.youtube.com/embed/5AzBdkbI0OY" allowfullscreen></iframe></div>
-    <div class="story-video"><iframe src="https://www.youtube.com/embed/yOVVbM9YtWM" allowfullscreen></iframe></div>
-    <div class="story-video"><iframe src="https://www.youtube.com/embed/nCFkTs8sG-A" allowfullscreen></iframe></div>
-    <div class="story-video"><iframe src="https://www.youtube.com/embed/NxLQK2xLoSs" allowfullscreen></iframe></div>
+  <div class="video-row">
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/5AzBdkbI0OY" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/yOVVbM9YtWM" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/nCFkTs8sG-A" allowfullscreen></iframe></div>
+    <div class="video-card"><iframe src="https://www.youtube.com/embed/NxLQK2xLoSs" allowfullscreen></iframe></div>
   </div>
 </div>
 
