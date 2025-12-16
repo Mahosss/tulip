@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tulip</title>
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 body {
     margin: 0;
     padding: 0;
     font-family: 'Tajawal', Arial, sans-serif;
-    /* خلفية خارجية متدرجة جديدة */
     background: linear-gradient(135deg, #00c6ff, #0072ff);
     display: flex;
     justify-content: center;
@@ -20,7 +20,7 @@ body {
 
 .card {
     width: 550px;
-    background-color: #ffffffdd; /* كارت أبيض مع شفافية خفيفة */
+    background-color: #ffffffdd;
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     overflow: hidden;
@@ -97,21 +97,21 @@ body {
 .profile-text h2 {
     margin: 0;
     font-size: 24px;
-    color: #0072ff; /* لون الاسم أزرق متناسق مع الخلفية */
-    text-shadow: 1px 1px 5px rgba(0, 114, 255, 0.7); /* تأثير glow خفيف */
+    color: #0072ff;
+    text-shadow: 1px 1px 5px rgba(0, 114, 255, 0.7);
 }
 
 .profile-text p {
     margin: 5px 0 0;
     font-size: 15px;
     color: #333;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1); /* تأثير خفيف على الوصف */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
 }
 
 .info-bar {
     display: flex;
     justify-content: space-between;
-    background-color: #f0f0f0cc; /* لون خلفية الكارت */
+    background-color: #f0f0f0cc;
     padding: 12px 20px;
     border-top: 1px solid #ddd;
     font-size: 14px;
@@ -128,17 +128,17 @@ body {
 
 .info-item:hover {
     transform: translateY(-2px);
-    color: #0072ff; /* تغيير لون النص عند المرور */
+    color: #0072ff;
 }
 
 .info-item i {
     font-size: 18px;
-    color: #00c6ff; /* لون الأيقونات جديد */
+    color: #00c6ff;
 }
 
 .info-item a {
     text-decoration: none;
-    color: #0072ff; /* رابط منفصل */
+    color: #0072ff;
     font-weight: bold;
 }
 
@@ -147,8 +147,32 @@ body {
     text-align: center;
     font-size: 15px;
 }
+
+/* تصميم الزر */
+.action-btn {
+    background-color: #0072ff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+.action-btn:hover {
+    background-color: #00c6ff;
+}
+
+/* صندوق العبارات المتغيرة */
+.typing-container {
+    font-size: 16px;
+    color: #0072ff;
+    min-height: 24px;
+    text-align: right;
+    font-weight: bold;
+}
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
@@ -187,10 +211,58 @@ body {
         </div>
     </div>
 
+    <!-- القسم الجديد تحت الأسئلة -->
     <div class="card-content">
-        <p>يمكنك هنا إضافة أي محتوى إضافي للكارت مثل روابط التواصل أو نبذة أكبر.</p>
+        <div style="text-align: right; margin-bottom: 15px;">
+            <button class="action-btn">اضغط هنا</button>
+        </div>
+        <div class="typing-container">
+            <span id="typing"></span>
+        </div>
     </div>
 </div>
+
+<script>
+const words = [
+    "مرحبا بك في صفحتي الشخصية!",
+    "يمكنك استكشاف مزاجي وهواياتي هنا.",
+    "دائما أحب تجربة أشياء جديدة."
+];
+
+let i = 0;
+let j = 0;
+let currentWord = '';
+let isDeleting = false;
+const typingSpeed = 100;
+const pauseTime = 1500;
+const typingElement = document.getElementById('typing');
+
+function type() {
+    if(i >= words.length) i = 0;
+    const fullWord = words[i];
+    
+    if(!isDeleting){
+        currentWord = fullWord.substring(0, j+1);
+        j++;
+        typingElement.textContent = currentWord;
+        if(j === fullWord.length){
+            isDeleting = true;
+            setTimeout(type, pauseTime);
+            return;
+        }
+    } else {
+        currentWord = fullWord.substring(0, j-1);
+        j--;
+        if(j === 0){
+            isDeleting = false;
+            i++;
+        }
+    }
+    setTimeout(type, typingSpeed);
+}
+
+type();
+</script>
 
 </body>
 </html>
