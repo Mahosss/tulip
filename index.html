@@ -9,7 +9,7 @@
 <style>
 body {
     margin: 0;
-    padding: 20px 0; /* تقليل المسافة أعلى وأسفل المتصفح */
+    padding: 20px 0;
     font-family: 'Tajawal', Arial, sans-serif;
     background: linear-gradient(135deg, #00c6ff, #0072ff);
     display: flex;
@@ -26,7 +26,7 @@ body {
     text-align: right;
     direction: rtl;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 10px 0; /* تقليل المسافة أعلى وأسفل */
+    margin: 10px 0;
 }
 
 .card:hover {
@@ -148,7 +148,7 @@ body {
     font-size: 15px;
 }
 
-/* زر "اضغط هنا" Gradient فوق العبارات */
+/* زر "اضغط هنا" Gradient */
 .action-btn {
     background: linear-gradient(45deg, #ff8c00, #ffcc00);
     color: #fff;
@@ -157,8 +157,6 @@ body {
     border-radius: 12px;
     cursor: pointer;
     font-size: 16px;
-    float: right; /* أقصى اليمين */
-    margin-bottom: 10px;
     transition: transform 0.3s ease;
 }
 
@@ -189,7 +187,7 @@ body {
     margin: 20px 0;
 }
 
-/* زر فيديوهاتي فوق معرض الفيديوهات */
+/* زر فيديوهاتي */
 .videos-btn {
     background: linear-gradient(45deg, #ff8c00, #ffcc00);
     color: #fff;
@@ -198,8 +196,6 @@ body {
     border-radius: 12px;
     cursor: pointer;
     font-size: 16px;
-    float: right; /* أقصى اليمين */
-    margin-bottom: 10px;
     transition: transform 0.3s ease;
 }
 
@@ -270,7 +266,9 @@ body {
 
     <div class="card-content">
         <!-- زر "اضغط هنا" فوق العبارات المتغيرة وأقصى اليمين -->
-        <button class="action-btn">اضغط هنا</button>
+        <div style="text-align: right; margin-bottom: 10px;">
+            <button class="action-btn">اضغط هنا</button>
+        </div>
         <div class="typing-btn">
             <span id="typing"></span>
         </div>
@@ -278,7 +276,9 @@ body {
         <div class="divider"></div>
 
         <!-- زر "فيديوهاتي" فوق معرض الفيديوهات وأقصى اليمين -->
-        <button class="videos-btn">فيديوهاتي</button>
+        <div style="text-align: right; margin-bottom: 10px;">
+            <button class="videos-btn">فيديوهاتي</button>
+        </div>
         <div class="videos-container">
             <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
             <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" allowfullscreen></iframe>
