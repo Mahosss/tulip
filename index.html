@@ -9,7 +9,7 @@
 <style>
 body {
     margin: 0;
-    padding: 40px 0; /* مسافة من أعلى وأسفل المتصفح */
+    padding: 40px 0;
     font-family: 'Tajawal', Arial, sans-serif;
     background: linear-gradient(135deg, #00c6ff, #0072ff);
     display: flex;
@@ -26,7 +26,7 @@ body {
     text-align: right;
     direction: rtl;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    margin: 20px 0; /* مسافة إضافية أعلى وأسفل */
+    margin: 20px 0;
 }
 
 .card:hover {
@@ -148,6 +148,7 @@ body {
     font-size: 15px;
 }
 
+/* زر "اضغط هنا" Gradient فوق العبارات */
 .action-btn {
     background: linear-gradient(45deg, #ff8c00, #ffcc00);
     color: #fff;
@@ -156,7 +157,6 @@ body {
     border-radius: 12px;
     cursor: pointer;
     font-size: 16px;
-    float: right;
     margin-bottom: 15px;
     transition: transform 0.3s ease;
 }
@@ -165,6 +165,7 @@ body {
     transform: scale(1.05);
 }
 
+/* زر العبارات المتغيرة */
 .typing-btn {
     background-color: rgba(0, 114, 255, 0.08);
     border: 2px solid #0072ff;
@@ -180,12 +181,14 @@ body {
     margin-bottom: 20px;
 }
 
+/* خط فاصل */
 .divider {
     height: 1px;
     background-color: #ddd;
     margin: 20px 0;
 }
 
+/* زر فيديوهاتي فوق معرض الفيديوهات */
 .videos-btn {
     background: linear-gradient(45deg, #ff8c00, #ffcc00);
     color: #fff;
@@ -194,7 +197,6 @@ body {
     border-radius: 12px;
     cursor: pointer;
     font-size: 16px;
-    float: right;
     margin-bottom: 10px;
     transition: transform 0.3s ease;
 }
@@ -203,6 +205,7 @@ body {
     transform: scale(1.05);
 }
 
+/* معرض الفيديوهات بالطول */
 .videos-container {
     display: flex;
     gap: 10px;
@@ -213,9 +216,10 @@ body {
 .videos-container iframe {
     flex: 0 0 auto;
     width: 120px;
-    height: 180px; /* بالطول مثل حالات واتساب */
+    height: 180px;
     border-radius: 12px;
 }
+
 .videos-container::-webkit-scrollbar {
     height: 8px;
 }
@@ -263,6 +267,7 @@ body {
     </div>
 
     <div class="card-content">
+        <!-- زر "اضغط هنا" فوق العبارات المتغيرة -->
         <button class="action-btn">اضغط هنا</button>
         <div class="typing-btn">
             <span id="typing"></span>
@@ -270,6 +275,7 @@ body {
 
         <div class="divider"></div>
 
+        <!-- زر "فيديوهاتي" فوق معرض الفيديوهات -->
         <button class="videos-btn">فيديوهاتي</button>
         <div class="videos-container">
             <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
@@ -293,18 +299,13 @@ const words = [
     "دائما أحب تجربة أشياء جديدة."
 ];
 
-let i = 0;
-let j = 0;
-let currentWord = '';
-let isDeleting = false;
-const typingSpeed = 100;
-const pauseTime = 1500;
+let i = 0, j = 0, currentWord = '', isDeleting = false;
+const typingSpeed = 100, pauseTime = 1500;
 const typingElement = document.getElementById('typing');
 
 function type() {
     if(i >= words.length) i = 0;
     const fullWord = words[i];
-    
     if(!isDeleting){
         currentWord = fullWord.substring(0, j+1);
         j++;
@@ -324,7 +325,6 @@ function type() {
     }
     setTimeout(type, typingSpeed);
 }
-
 type();
 </script>
 
