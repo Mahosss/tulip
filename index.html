@@ -10,8 +10,8 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Tajawal', Arial, sans-serif;
-    /* خلفية خارجية متدرجة */
-    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    /* خلفية خارجية متدرجة جديدة */
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +20,7 @@ body {
 
 .card {
     width: 550px;
-    background-color: #ffffffdd; /* لون الكارت مناسب وشفاف قليلًا */
+    background-color: #ffffffdd; /* كارت أبيض مع شفافية خفيفة */
     border-radius: 20px;
     box-shadow: 0 15px 35px rgba(0,0,0,0.2);
     overflow: hidden;
@@ -97,8 +97,8 @@ body {
 .profile-text h2 {
     margin: 0;
     font-size: 24px;
-    color: #ff6b6b; /* لون الاسم أحمر جاذب */
-    text-shadow: 1px 1px 5px rgba(255, 107, 107, 0.7); /* تأثير glow على الاسم */
+    color: #0072ff; /* لون الاسم أزرق متناسق مع الخلفية */
+    text-shadow: 1px 1px 5px rgba(0, 114, 255, 0.7); /* تأثير glow خفيف */
 }
 
 .profile-text p {
@@ -111,7 +111,7 @@ body {
 .info-bar {
     display: flex;
     justify-content: space-between;
-    background-color: #f9f9f9cc; /* لون الكارت مع شفافية */
+    background-color: #f0f0f0cc; /* لون خلفية الكارت */
     padding: 12px 20px;
     border-top: 1px solid #ddd;
     font-size: 14px;
@@ -128,17 +128,18 @@ body {
 
 .info-item:hover {
     transform: translateY(-2px);
-    color: #ff6b6b; /* تغيير لون النص عند المرور */
+    color: #0072ff; /* تغيير لون النص عند المرور */
 }
 
 .info-item i {
     font-size: 18px;
-    color: #ff6b6b; /* لون الأيقونات */
+    color: #00c6ff; /* لون الأيقونات جديد */
 }
 
 .info-item a {
     text-decoration: none;
-    color: #333;
+    color: #0072ff; /* رابط منفصل */
+    font-weight: bold;
 }
 
 .card-content {
@@ -181,7 +182,8 @@ body {
         </div>
         <div class="info-item">
             <i class="fas fa-comment-dots"></i>
-            <a href="https://melody.example.com" target="_blank">دردشتي: ميلودى</a>
+            <span>دردشتي:</span>
+            <a href="https://melody.example.com" target="_blank">ميلودى</a>
         </div>
     </div>
 
