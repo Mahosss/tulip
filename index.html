@@ -1,178 +1,77 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tulip Cover Style</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>الصفحة الشخصية</title>
 <style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:'Cairo',sans-serif;
-}
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
 
-body{
-  background:#0b0611;
-  color:#fff;
-  padding:0;
-  margin:0;
-}
+    .card {
+        width: 350px;
+        background-color: #fff;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        overflow: hidden;
+        text-align: center;
+    }
 
-/* ===== HEADER / COVER ===== */
-.cover{
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:space-between;
-  background:linear-gradient(135deg,#0f172a,#020617);
-  padding:40px 20px 30px;
-  border-radius:0 0 30px 30px;
-}
+    .card .cover {
+        width: 100%;
+        height: 120px;
+        background: url('https://via.placeholder.com/350x120') center/cover no-repeat;
+        position: relative;
+    }
 
-.cover-left{
-  flex:1 1 55%;
-  min-width:220px;
-}
+    .profile-img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 4px solid #fff;
+        position: absolute;
+        bottom: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: url('https://via.placeholder.com/100') center/cover no-repeat;
+    }
 
-.cover-left .name{
-  font-size:28px;
-  font-weight:700;
-  background:linear-gradient(90deg,#f472b6,#818cf8);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  margin-bottom:8px;
-}
+    .card-content {
+        padding: 60px 20px 20px;
+    }
 
-.cover-left .bio{
-  font-size:15px;
-  color:#e5e7eb;
-  opacity:.85;
-}
+    .card-content h2 {
+        margin: 0;
+        font-size: 22px;
+        color: #333;
+    }
 
-.cover-right{
-  flex:1 1 35%;
-  min-width:140px;
-  text-align:center;
-}
-
-.cover-right .avatar{
-  width:140px;
-  height:140px;
-  border-radius:50%;
-  overflow:hidden;
-  border:4px solid #f472b6;
-  box-shadow:0 0 25px rgba(244,114,182,.55);
-  margin:auto;
-}
-
-.cover-right .avatar img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-/* ===== VIDEOS SECTION ===== */
-.videos-section{
-  margin-top:30px;
-  padding:0 20px 40px;
-}
-
-.section-title{
-  text-align:center;
-  margin-bottom:14px;
-  font-weight:600;
-  font-size:16px;
-  background:linear-gradient(90deg,#f472b6,#818cf8);
-  display:inline-block;
-  padding:6px 16px;
-  border-radius:20px;
-}
-
-.video-row{
-  display:flex;
-  gap:14px;
-  overflow-x:auto;
-  padding:10px 0;
-  -webkit-overflow-scrolling: touch;
-}
-
-.video-row::-webkit-scrollbar{
-  height:6px;
-}
-
-.video-row::-webkit-scrollbar-thumb{
-  background:linear-gradient(90deg,#f472b6,#818cf8);
-  border-radius:10px;
-}
-
-.video-card{
-  flex:0 0 70%;
-  max-width:70%;
-  aspect-ratio:9/16;
-  border-radius:18px;
-  overflow:hidden;
-  box-shadow:0 10px 30px rgba(0,0,0,.6);
-  background:#000;
-}
-
-.video-card iframe{
-  width:100%;
-  height:100%;
-  border:none;
-}
-
-/* ===== MEDIA ===== */
-@media(max-width:768px){
-  .cover{
-    flex-direction:column-reverse;
-    align-items:center;
-    text-align:center;
-    gap:20px;
-    border-radius:0 0 20px 20px;
-  }
-  .cover-left, .cover-right{
-    flex:1 1 100%;
-  }
-  .video-card{
-    flex:0 0 85%;
-    max-width:85%;
-  }
-}
-
-@media(max-width:480px){
-  .video-card{
-    flex:0 0 95%;
-    max-width:95%;
-  }
-}
+    .card-content p {
+        margin: 10px 0 0;
+        font-size: 14px;
+        color: #666;
+        line-height: 1.4;
+    }
 </style>
 </head>
 <body>
 
-<div class="cover">
-  <div class="cover-left">
-    <div class="name">Tulip 🌸</div>
-    <div class="bio">الهدوء هو فخامتى… والبساطة سر جمالى</div>
-  </div>
-  <div class="cover-right">
-    <div class="avatar">
-      <img src="https://img.alfrsantv.com/img/f176457294607841.png" alt="Tulip">
+<div class="card">
+    <div class="cover">
+        <div class="profile-img"></div>
     </div>
-  </div>
-</div>
-
-<div class="videos-section">
-  <div class="section-title">فيديوهاتى</div>
-  <div class="video-row">
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/5AzBdkbI0OY" allowfullscreen></iframe></div>
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/yOVVbM9YtWM" allowfullscreen></iframe></div>
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/nCFkTs8sG-A" allowfullscreen></iframe></div>
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/NxLQK2xLoSs" allowfullscreen></iframe></div>
-    <div class="video-card"><iframe src="https://www.youtube.com/embed/iqZJ_sn1Ms4" allowfullscreen></iframe></div>
-  </div>
+    <div class="card-content">
+        <h2>اسمك هنا</h2>
+        <p>هذا وصفك الشخصي من سطر أو سطرين يوضح نبذة عنك أو اهتماماتك.</p>
+    </div>
 </div>
 
 </body>
