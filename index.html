@@ -3,64 +3,69 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tulip VIP</title>
+<title>Tulip • VIP</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&display=swap');
-
 *{
   box-sizing:border-box;
-  font-family:'Cairo', sans-serif;
   margin:0;
   padding:0;
+  font-family:'Cairo', sans-serif;
 }
 
 body{
   min-height:100vh;
-  padding-top:90px;
-  background:linear-gradient(135deg,#2b193d,#0f172a);
+  background:
+    radial-gradient(circle at top, #f472b6 0%, transparent 40%),
+    linear-gradient(135deg,#1f0a1c,#05010a);
+  display:flex;
+  justify-content:center;
+  padding:90px 15px 60px;
   color:#fff;
   overflow-x:hidden;
 }
 
+/* ===== CARD ===== */
 .profile-card{
-  width:90%;
+  width:100%;
   max-width:420px;
-  background:rgba(255,255,255,0.07);
-  backdrop-filter:blur(14px);
+  background:rgba(255,255,255,0.08);
+  backdrop-filter:blur(16px);
   border-radius:28px;
-  padding:95px 16px 40px;
-  text-align:center;
+  padding:95px 22px 40px;
   position:relative;
-  margin:0 auto 50px;
+  text-align:center;
   box-shadow:
-    0 30px 80px rgba(0,0,0,.65),
-    inset 0 0 0 1px rgba(255,255,255,.08);
+    0 40px 90px rgba(244,114,182,.35),
+    inset 0 0 0 1px rgba(255,255,255,.12);
 }
 
-/* الصورة */
+/* ===== AVATAR ===== */
 .avatar{
-  width:145px;
-  height:145px;
+  width:150px;
+  height:150px;
   border-radius:50%;
-  overflow:hidden;
   position:absolute;
-  top:-72px;
+  top:-75px;
   left:50%;
   transform:translateX(-50%);
-  border:4px solid #f472b6;
-  box-shadow:0 0 30px rgba(244,114,182,.7);
-  transition:.4s;
+  overflow:hidden;
   background:#000;
+  border:5px solid transparent;
+  background:
+    linear-gradient(#000,#000) padding-box,
+    linear-gradient(135deg,#f472b6,#c084fc) border-box;
+  box-shadow:
+    0 0 40px rgba(244,114,182,.7),
+    0 0 70px rgba(192,132,252,.5);
+  transition:transform .4s ease;
 }
 
 .avatar:hover{
-  transform:translateX(-50%) scale(1.08);
-  box-shadow:
-    0 0 50px rgba(244,114,182,1),
-    0 0 90px rgba(168,85,247,.7);
+  transform:translateX(-50%) scale(1.1) rotate(2deg);
 }
 
 .avatar img{
@@ -69,25 +74,28 @@ body{
   object-fit:cover;
 }
 
-/* الاسم */
+/* ===== NAME & BIO ===== */
 .name{
   font-size:24px;
   font-weight:700;
-  margin:14px 0 6px;
+  margin:12px 0 6px;
+  background:linear-gradient(90deg,#f9a8d4,#c084fc);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
 }
 
 .bio{
   font-size:14px;
-  color:#e5d9f2;
-  margin-bottom:26px;
+  color:#fbcfe8;
+  margin-bottom:25px;
+  line-height:1.7;
 }
 
-/* المعلومات */
+/* ===== INFO ===== */
 .info{
   background:rgba(255,255,255,0.05);
-  border-radius:18px;
+  border-radius:20px;
   padding:12px;
-  margin-bottom:20px;
 }
 
 .info-item{
@@ -95,27 +103,27 @@ body{
   align-items:center;
   gap:10px;
   padding:14px;
-  font-size:14px;
-  border-radius:14px;
-  transition:.25s;
+  border-radius:16px;
+  transition:all .3s ease;
 }
 
 .info-item:not(:last-child){
-  margin-bottom:6px;
+  margin-bottom:8px;
 }
 
 .info-item:hover{
-  background:rgba(244,114,182,.12);
+  background:rgba(244,114,182,.18);
   transform:translateX(-6px);
 }
 
 .icon{
-  width:22px;
+  width:24px;
+  text-align:center;
   color:#f472b6;
 }
 
 .label{
-  color:#d8b4fe;
+  color:#fbcfe8;
 }
 
 .value{
@@ -124,43 +132,43 @@ body{
 }
 
 .value a{
-  color:#fde2f3;
+  color:#fff;
   text-decoration:none;
 }
 
 .value a:hover{
-  color:#f472b6;
+  color:#f9a8d4;
   text-decoration:underline;
 }
 
-/* الفاصل */
+/* ===== SEPARATOR ===== */
 .separator{
   height:1px;
-  background:linear-gradient(to right, transparent, #f472b6, transparent);
-  margin:18px 0 22px;
   border:none;
-  width:90%;
+  margin:20px auto;
+  width:85%;
+  background:linear-gradient(to right,transparent,#f472b6,transparent);
 }
 
-/* عنوان الفيديوهات */
+/* ===== VIDEOS ===== */
 .videos-title{
   display:inline-block;
-  background:linear-gradient(135deg,#f472b6,#a855f7);
-  color:#fff;
+  background:linear-gradient(135deg,#f472b6,#c084fc);
   padding:7px 18px;
-  font-weight:600;
-  font-size:14px;
   border-radius:22px;
+  font-size:14px;
+  font-weight:600;
   margin-bottom:12px;
 }
 
-/* الفيديوهات */
 .video-row{
   display:flex;
-  gap:15px;
+  gap:16px;
   overflow-x:auto;
-  padding-bottom:20px;
-  -webkit-overflow-scrolling: touch;
+  padding-bottom:15px;
+  scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;
+  touch-action:pan-x;
 }
 
 .video-row::-webkit-scrollbar{
@@ -168,21 +176,22 @@ body{
 }
 
 .video-row::-webkit-scrollbar-thumb{
-  background:#f472b6;
+  background:linear-gradient(135deg,#f472b6,#c084fc);
   border-radius:10px;
 }
 
 .video-card{
-  flex:0 0 calc(33.33% - 10px);
-  height:215px;
+  flex:0 0 32%;
+  height:230px;
   border-radius:18px;
   overflow:hidden;
-  box-shadow:0 6px 18px rgba(0,0,0,.55);
-  transition:.3s;
+  background:#000;
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
+  transition:transform .35s ease;
 }
 
 .video-card:hover{
-  transform:scale(1.05);
+  transform:scale(1.07);
 }
 
 .video-card iframe{
@@ -191,33 +200,34 @@ body{
   border:none;
 }
 
-/* ريسبونسف */
-@media (max-width:1024px){
-  .video-card{flex:0 0 calc(50% - 10px);}
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .video-card{ flex:0 0 48%; }
 }
 
-@media (max-width:480px){
-  .video-card{flex:0 0 100%;}
+@media(max-width:480px){
+  .video-card{ flex:0 0 85%; }
 }
 </style>
 </head>
-
 <body>
 
 <div class="profile-card">
 
   <div class="avatar">
-    <!-- غيري الصورة -->
-    <img src="https://i.imgur.com/8Km9tLL.jpg" alt="Tulip">
+    <img src="https://img.alfrsantv.com/img/f176457294607841.png" alt="Tulip">
   </div>
 
-  <div class="name">🌷 توليب 🌷</div>
-  <div class="bio">أؤمن أن البساطة هي أرقى أشكال الجمال</div>
+  <div class="name">Tulip 🌷</div>
+  <div class="bio">
+    هادئة كالموسيقى…  
+    وناعمة كبتلات الورد
+  </div>
 
   <div class="info">
 
     <div class="info-item">
-      <span class="icon"><i class="fa-solid fa-flag"></i></span>
+      <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
       <span class="label">البلد</span>
       <span class="value">مصر</span>
     </div>
@@ -225,7 +235,7 @@ body{
     <div class="info-item">
       <span class="icon"><i class="fa-solid fa-heart"></i></span>
       <span class="label">الهواية</span>
-      <span class="value">التصوير</span>
+      <span class="value">القراءة</span>
     </div>
 
     <div class="info-item">
@@ -238,7 +248,7 @@ body{
       <span class="icon"><i class="fa-solid fa-comments"></i></span>
       <span class="label">الشات</span>
       <span class="value">
-        <a href="#" target="_blank">Tulip Chat</a>
+        <a href="https://xat.com/melodylovers" target="_blank">شات ميلودى</a>
       </span>
     </div>
 
